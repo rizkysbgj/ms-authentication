@@ -9,6 +9,11 @@ const config = {
   },
   security: {
     secretKey: process.env.SECURITY_SECRET_KEY
+  },
+  services: {
+    user: {
+      baseUrl: process.env.MS_USER_BASE_URL
+    }
   }
 }
 

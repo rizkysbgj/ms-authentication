@@ -14,10 +14,7 @@ const repositories = (req, res, next) => {
     }
   });
 
-  const userRepository = new UserRepository({ db, config });
-
   Object.assign(res.locals, { 
-    userRepository
   });
 
   next();
