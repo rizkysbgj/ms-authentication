@@ -1,5 +1,6 @@
 const knex = require('knex');
 
+const { UserRepository } = require('../repositories')
 const config = require('../config');
 
 const repositories = (req, res, next) => {
@@ -13,7 +14,11 @@ const repositories = (req, res, next) => {
     }
   });
 
-  Object.assign(res.locals, { });
+  const userRepository = new UserRepository({ db, config });
+
+  Object.assign(res.locals, { 
+    userRepository
+  });
 
   next();
 }

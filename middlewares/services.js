@@ -1,7 +1,17 @@
-const services = (req, res, next) => {
-  const { locals: { }} = res;
+const { UserService, AuthenticationService } = require('../services');
+const config = require('../config');
 
-  Object.assign(res.locals, { });
+const services = (req, res, next) => {
+  const { locals: { userRepository }} = res;
+
+  const userService = new UserService({ userRepository });
+
+  const authenticationService = new AuthenticationService({ 
+    userService ,
+    config
+  });
+
+  Object.assign(res.locals, {userService, authenticationService });
 
   next();
 }

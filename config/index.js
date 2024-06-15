@@ -6,6 +6,9 @@ const config = {
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
     name: process.env.DATABASE_NAME
+  },
+  security: {
+    secretKey: process.env.SECURITY_SECRET_KEY
   }
 }
 

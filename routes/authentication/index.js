@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { addUserHandler } = require('./handler')
+const { loginHandler } = require('./handler')
 
 router.post(
-  '/users', 
-  addUserHandler
+  '/login', 
+  loginHandler
 );
 
 module.exports = router;
